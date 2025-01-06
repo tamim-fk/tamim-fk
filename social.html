@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            margin: 15px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon {
+            font-size: 50px;
+            color: #007BFF;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+
+        .name {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .card {
+                width: 90%; /* Full width on small screens */
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 900px) {
+            .card {
+                width: 45%; /* Two cards per row on medium screens */
+            }
+        }
+
+        @media (min-width: 901px) {
+            .card {
+                width: 30%; /* Three cards per row on large screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <i class="fab fa-facebook icon"></i>
+        <h1 class="name">Facebook</h1>
+        <p class="bio">Connect with me on Facebook!</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/fahimkabir.tamim" target="_blank">Visit</a>
+        </div>
+    </div>
+    <div class="card">
+        <i class="fa-brands fa-x-twitter" style="color: #74C0FC;"></i>
+        <h1 class="name">X</h1> <!-- Change the name to X -->
+        <p class="bio">Follow me on X for updates!</p> <!-- Update the bio accordingly -->
+        <div class="social-links">
+            <a href="https://x.com/tamim_fk" target="_blank">Visit</a> <!-- Ensure the link points to x.com -->
+        </div>
+    </div>
+
+    <div class="card">
+        <i class="fab fa-linkedin icon"></i>
+        <h1 class="name">LinkedIn</h1>
+        <p class="bio">Connect with me on LinkedIn!</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/fahim-kabir-tamim-679b4b33b/" target="_blank">Visit</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <i class="fab fa-github icon"></i>
+        <h1 class="name">GitHub</h1>
+        <p class="bio">Check out my projects on GitHub!</p>
+        <div class="social-links">
+            <a href="https://github.com/bytebrilliance2" target="_blank">Visit</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <i class="fab fa-instagram icon"></i>
+        <h1 class="name">Instagram</h1>
+        <p class="bio">Follow my journey on Instagram!</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/fahimakabirtamim/" target="_blank">Visit</a>
+        </div>
+    </div>
+</body>
+</html>

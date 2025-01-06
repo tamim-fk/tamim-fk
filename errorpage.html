@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #f4f4f4; /* Light text color */
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #f4f4f4; /* Light text color for icons */
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        .header-info {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #f4f4f4;
+        }
+        .clock {
+            font-size: 48px; /* Large font size for the clock */
+            margin: 5px 0;
+            font-weight: bold; /* Make the clock bold */
+        }
+        .weather {
+            font-size: 18px;
+            margin: 5px 0;
+            margin-bottom: 20px;
+          
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>404 Error</h1>
+    <p>We're updating the website. This feature is coming soon!</p>
+    <p>For more information, please contact us:</p>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com/fahimkabir.tamim" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/fahimakabirtamim/?next=%2F" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/01888265498" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="mailto:fahimkabirtamim66600999@gmail.com" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/gmail.png" alt="Gmail">
+        </a>
+        <a href="https://www.linkedin.com/in/fahim-kabir-tamim-679b4b33b/" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+        </a>
+    </div>
+
+    <script>
+        // Function to update the clock
+        function updateClock() {
+            const now = new Date();
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', options);
+        }
+
+        // Function to fetch weather data
+        async function fetchWeather() {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+            const city = 'Dhaka'; // Replace with your city
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.main) {
+                    const temperature = data.main.temp;
+                    const weatherDescription = data.weather[0].description;
+                    document.getElementById('weather').innerText = `Weather: ${temperature}°C, ${weatherDescription}`;
+                } else {
+                    document.getElementById('weather').innerText = ' Weather data not available';
+                }
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                document.getElementById('weather').innerText = 'Error fetching weather data';
+            }
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+        // Fetch weather data on page load
+        fetchWeather();
+    </script>
+
+</body>
+</html>
